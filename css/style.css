@@ -6,14 +6,14 @@
 }
 
 body {
-  background-image: linear-gradient(110deg, #f6d365, #ff6f00);
+  background-image: linear-gradient(110deg, #7379c5, #2d006b);
   color: white;
   font-family: "Poppins",sans-serif;
   min-height: 100vh;
 }
 
 .color {
-  background: #ff6f00;
+  background: #2d006b;
   color: white;
   border: none;
   padding: 1rem;
@@ -33,7 +33,6 @@ header {
       -ms-flex-align: center;
           align-items: center;
   font-size: 2rem;
-  margin-top: 2rem;
 }
 
 header h1 {
@@ -83,7 +82,7 @@ form input::placeholder, form button::placeholder {
 }
 
 form button {
-  color: #ff6f00;
+  color: #2d006b;
   background: white;
   cursor: pointer;
   outline: none;
@@ -92,7 +91,7 @@ form button {
 }
 
 form button:hover {
-  background: #ff6f00;
+  background: #2d006b;
   color: white;
 }
 
@@ -104,7 +103,7 @@ form select {
           appearance: none;
   outline: none;
   border: none;
-  color: #ff6f00;
+  color: #2d006b;
   width: 10rem;
   font-size: 1rem;
   font-weight: 700;
@@ -119,6 +118,7 @@ form .select {
   margin: 1rem;
   position: relative;
   overflow: hidden;
+  border: solid 2px white;
 }
 
 form .select::after {
@@ -126,7 +126,7 @@ form .select::after {
   font-size: 1rem;
   position: absolute;
   color: white;
-  background: #ff6f00;
+  background: #2d006b;
   top: 0;
   right: 0;
   padding: 0.8rem;
@@ -137,7 +137,7 @@ form .select::after {
 
 form .select:hover::after {
   background: white;
-  color: #ff6f00;
+  color: #2d006b;
 }
 
 .todo-container {
@@ -150,11 +150,12 @@ form .select:hover::after {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 
 .todo-container .todo-list {
   min-width: 30%;
+  max-width: 70%;
   list-style: none;
 }
 
@@ -162,7 +163,7 @@ form .select:hover::after {
   margin: 0.5rem;
   background: white;
   color: black;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,13 +185,15 @@ form .select:hover::after {
 }
 
 .todo-container .todo-list .todo .complete-btn, .todo-container .todo-list .todo .trash-btn {
-  background: #ff6f00;
+  background: #2d006b;
   color: white;
   border: none;
   padding: 1rem;
   cursor: pointer;
   font-size: 1rem;
   outline: none;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .todo-container .todo-list .todo .trash-btn {
@@ -210,5 +213,94 @@ form .select:hover::after {
   -webkit-transform: translateY(8rem) rotateZ(20deg);
           transform: translateY(8rem) rotateZ(20deg);
   opacity: 0;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    font-size: 1.3rem;
+    margin-top: 0.6rem;
+  }
+  header .fa-check-double {
+    font-size: 28px;
+  }
+  form input, form button {
+    font-size: 1rem;
+    height: 6vh;
+    width: 30vw;
+  }
+  form button {
+    width: 2rem;
+  }
+  form select {
+    padding: .5rem .5rem;
+    width: 7rem;
+    height: 6vh;
+    font-size: .6rem;
+  }
+  form .select {
+    margin: 1rem;
+    position: relative;
+    overflow: hidden;
+    width: 20vw;
+  }
+  form .select::after {
+    font-size: .6rem;
+    padding: 0.8rem;
+  }
+  .todo-container {
+    margin-top: 2vh;
+  }
+  .todo-container .todo-list {
+    min-width: 65%;
+    max-width: 80%;
+    list-style: none;
+  }
+  .todo-container .todo-list .todo {
+    margin: 0.5rem;
+    background: white;
+    color: black;
+    font-size: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+  }
+  .todo-container .todo-list .todo .todo-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    padding: 0rem 0.5rem;
+  }
+  .todo-container .todo-list .todo .complete-btn, .todo-container .todo-list .todo .trash-btn {
+    background: #2d006b;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
+  }
+  .todo-container .todo-list .todo .trash-btn {
+    background: #1ed81e;
+  }
+  .todo-container .todo-list .todo .fa-trash, .todo-container .todo-list .todo .fa-check {
+    pointer-events: none;
+  }
+  .todo-container .todo-list .completed {
+    text-decoration: line-through;
+    opacity: 0.5;
+  }
+  .todo-container .todo-list .fall {
+    -webkit-transform: translateY(8rem) rotateZ(20deg);
+            transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

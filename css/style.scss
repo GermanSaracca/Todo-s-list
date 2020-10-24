@@ -4,8 +4,8 @@
     box-sizing: border-box;
 }
 //Colors
-$Color1: #f6d365;
-$Color2: #ff6f00;
+$Color1: #7379c5;
+$Color2: #2d006b;
 
 
 
@@ -37,7 +37,6 @@ body {
 header {
     @include flexCenter();
     font-size:  2rem;
-    margin-top: 2rem;
 
     h1{
         font-weight: 400;
@@ -101,6 +100,7 @@ form {
         margin: 1rem;
         position: relative;
         overflow: hidden;
+        border: solid 2px white;
         
         &::after{
             content:"\25BC";
@@ -125,17 +125,18 @@ form {
 .todo-container {
 
     @include flexCenter();
-    margin-top: 5vh;
+    margin-top: 2vh;
 
     .todo-list{
         min-width: 30%;
+        max-width: 70%;
         list-style: none;
 
         .todo{
             margin: 0.5rem;
             background: white;
             color: black;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -153,6 +154,7 @@ form {
                 cursor: pointer;
                 font-size: 1rem;
                 outline: none;
+                align-self: flex-start;
             }
 
             .trash-btn {
@@ -178,4 +180,102 @@ form {
     }
 }
 
+
+@media screen and (max-width: 768px){
+
+    header {
+        font-size:  1.3rem;
+        margin-top: 0.6rem;
+    
+        .fa-check-double {
+            font-size: 28px;
+        }
+    }
+
+    form {
+
+        input {
+            font-size: 1rem;
+            height: 6vh;
+            width: 30vw;
+        }
+        button {
+            width: 2rem;
+        }
+        select {
+            
+            padding: .5rem .5rem;
+            width: 7rem;
+            height: 6vh;
+            font-size: .6rem;
+        }
+    
+        .select {
+            margin: 1rem;
+            position: relative;
+            overflow: hidden;
+            width: 20vw;
+            
+            &::after{
+                font-size: .6rem;
+                padding: 0.8rem;
+            }
+        }
+    }
+    .todo-container {
+
+        margin-top: 2vh;
+    
+        .todo-list{
+            min-width: 65%;
+            max-width: 80%;
+            list-style: none;
+    
+            .todo{
+                margin: 0.5rem;
+                background: white;
+                color: black;
+                font-size: 1rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                transition: all 0.5s ease;
+    
+                .todo-item {
+                    flex: 1;
+                    padding: 0rem 0.5rem;
+                }
+                .complete-btn {
+                    background: $Color2;
+                    color: white;
+                    border: none;
+                    padding: 1rem;
+                    cursor: pointer;
+                    font-size: 1rem;
+                    outline: none;
+                }
+    
+                .trash-btn {
+                    background: rgb(30, 216, 30);
+                }
+    
+                .fa-trash, .fa-check {
+                    pointer-events: none;
+                }
+                
+            }
+            //animacion al terminar todo
+            .completed {
+                text-decoration: line-through;
+                opacity: 0.5;
+            }
+            //animacion al eliminar todo
+            .fall {
+                transform: translateY(8rem) rotateZ(20deg);
+                opacity: 0;
+            }
+        }
+    }
+
+}
 
