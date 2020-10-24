@@ -1,0 +1,214 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: linear-gradient(110deg, #f6d365, #ff6f00);
+  color: white;
+  font-family: "Poppins",sans-serif;
+  min-height: 100vh;
+}
+
+.color {
+  background: #ff6f00;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  outline: none;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+header h1 {
+  font-weight: 400;
+  color: white;
+}
+
+header .fa-check-double {
+  font-size: 36px;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+form input, form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  height: 8vh;
+  border: none;
+  background: white;
+  outline: none;
+}
+
+form input::-webkit-input-placeholder, form button::-webkit-input-placeholder {
+  color: lightgray;
+}
+
+form input:-ms-input-placeholder, form button:-ms-input-placeholder {
+  color: lightgray;
+}
+
+form input::-ms-input-placeholder, form button::-ms-input-placeholder {
+  color: lightgray;
+}
+
+form input::placeholder, form button::placeholder {
+  color: lightgray;
+}
+
+form button {
+  color: #ff6f00;
+  background: white;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: #ff6f00;
+  color: white;
+}
+
+form select {
+  cursor: pointer;
+  padding: 1rem .5rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border: none;
+  color: #ff6f00;
+  width: 10rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+form select option {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+form .select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+form .select::after {
+  content: "\25BC";
+  font-size: 1rem;
+  position: absolute;
+  color: white;
+  background: #ff6f00;
+  top: 0;
+  right: 0;
+  padding: 0.8rem;
+  pointer-events: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+form .select:hover::after {
+  background: white;
+  color: #ff6f00;
+}
+
+.todo-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 5vh;
+}
+
+.todo-container .todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo-container .todo-list .todo {
+  margin: 0.5rem;
+  background: white;
+  color: black;
+  font-size: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.todo-container .todo-list .todo .todo-item {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0rem 0.5rem;
+}
+
+.todo-container .todo-list .todo .complete-btn, .todo-container .todo-list .todo .trash-btn {
+  background: #ff6f00;
+  color: white;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  outline: none;
+}
+
+.todo-container .todo-list .todo .trash-btn {
+  background: #1ed81e;
+}
+
+.todo-container .todo-list .todo .fa-trash, .todo-container .todo-list .todo .fa-check {
+  pointer-events: none;
+}
+
+.todo-container .todo-list .completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.todo-container .todo-list .fall {
+  -webkit-transform: translateY(8rem) rotateZ(20deg);
+          transform: translateY(8rem) rotateZ(20deg);
+  opacity: 0;
+}
+/*# sourceMappingURL=style.css.map */

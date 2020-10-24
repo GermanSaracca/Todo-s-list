@@ -1,0 +1,179 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+//Colors
+$Color1: gray;
+$Color2: black;
+
+
+
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-image: linear-gradient(110deg, $Color1,$Color2);
+    color: white;
+    font-family: "Poppins",sans-serif;
+    min-height: 100vh;
+}
+
+.color {
+    
+    background: $Color2;
+    color: white;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 1rem;
+    outline: none;
+}
+
+header {
+    @include flexCenter();
+    font-size:  2rem;
+    margin-top: 2rem;
+
+    h1{
+        font-weight: 400;
+        color: white;
+    }
+    .fa-check-double {
+        font-size: 36px;
+    }
+}
+
+form {
+
+    @include flexCenter();
+
+    input {
+        padding: 0.5rem;
+        font-size: 2rem;
+        height: 8vh;
+        border: none;
+        background: white;
+        outline: none;
+
+        &::placeholder {
+            color: lightgray;
+        }
+    }
+
+    button {
+        @extend input;
+
+        color: $Color2;
+        background: white;
+        cursor: pointer;
+        outline: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background: $Color2;
+            color: white;
+        }
+    }
+    select {
+        cursor: pointer;
+        padding: 1rem .5rem;
+        appearance: none;
+        outline: none;
+        border: none;
+        color: $Color2;
+        width: 10rem;
+        font-size: 1rem;
+        font-weight: 700;
+
+        option {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+    }
+
+    .select {
+        margin: 1rem;
+        position: relative;
+        overflow: hidden;
+        
+        &::after{
+            content:"\25BC";
+            font-size: 1rem;
+            position: absolute;
+            color: white;
+            background: $Color2;
+            top: 0;
+            right: 0;
+            padding: 0.8rem;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        &:hover::after {
+            background: white ;
+            color: $Color2 ;
+        }
+    }
+
+
+}
+.todo-container {
+
+    @include flexCenter();
+    margin-top: 5vh;
+
+    .todo-list{
+        min-width: 30%;
+        list-style: none;
+
+        .todo{
+            margin: 0.5rem;
+            background: white;
+            color: black;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.5s ease;
+
+            .todo-item {
+                flex: 1;
+                padding: 0rem 0.5rem;
+            }
+            .complete-btn {
+                background: $Color2;
+                color: white;
+                border: none;
+                padding: 1rem;
+                cursor: pointer;
+                font-size: 1rem;
+                outline: none;
+            }
+
+            .trash-btn {
+                @extend .complete-btn;
+                background: rgb(30, 216, 30);
+            }
+
+            .fa-trash, .fa-check {
+                pointer-events: none;
+            }
+            
+        }
+        //animacion al terminar todo
+        .completed {
+            text-decoration: line-through;
+            opacity: 0.5;
+        }
+        //animacion al eliminar todo
+        .fall {
+            transform: translateY(8rem) rotateZ(20deg);
+            opacity: 0;
+        }
+    }
+}
